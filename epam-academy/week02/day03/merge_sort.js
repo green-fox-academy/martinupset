@@ -1,16 +1,16 @@
 function mergeSort(arr) {
-    var len = arr.length;
-    if(len < 2) {
+    let len = arr.length;
+    if (len < 2) {
         return arr;
     }
-    var middle = Math.floor(len / 2),
-        left = arr.slice(0, middle),
-        right = arr.slice(middle);
-    return merge(mergeSort(left), mergeSort(right));
+    let middle = Math.floor(len / 2),
+        left = mergeSort(arr.slice(0, middle))
+    right = mergeSort(arr.slice(middle))
+    return merge(left, right);
 }
 
-function merge(left, right)
-{
+
+function merge(left, right) {
     var result = [];
 
     while (left.length && right.length) {
@@ -29,3 +29,10 @@ function merge(left, right)
 
     return result;
 }
+
+console.log(mergeSort([5, 4, 4, 2, 5, 7, 0, 4, 5, 67, 89]))
+
+
+// for (let i = 0; i < 90; i++) {
+
+// }
