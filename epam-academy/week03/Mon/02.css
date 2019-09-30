@@ -1,0 +1,38 @@
+div{
+    border: 5px solid blue;
+    width: 355px
+}
+
+p{
+    font-size: 36px;
+    color: white;
+    height: 145px;
+    width: 355px;
+    margin: 0px;
+    text-align: center;
+}
+
+#a{
+    background-color: brown
+
+}
+
+#b{
+    background-color: yellowgreen
+}
+
+#c{
+    background-color: aquamarine
+}
+
+#d{
+    background-color: blueviolet
+}
+
+.e3{
+    background-color: palevioletred
+}
+
+.ex3{
+    background-color: aquamarine
+}
