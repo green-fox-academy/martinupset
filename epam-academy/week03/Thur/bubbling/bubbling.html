@@ -43,10 +43,12 @@
     let image = document.querySelector('div')
 
     for (i of btnList){
+      console.log(i)
       if (i.getAttribute('data-action') == 'zoom'){
-        i.addEventlistener('click', (event) => {
-          if(event.getAttribute('data-direction') == 'Zoom in'){
-            console.log(i.style.background-size)
+        i.addEventListener('click', (event) => {
+          console.log(event)
+          if(event.target.getAttribute('data-direction') == 'Zoom in'){
+            console.log('aaa')
           }
         })
         console.log(i)

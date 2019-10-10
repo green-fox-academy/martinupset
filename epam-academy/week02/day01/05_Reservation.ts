@@ -4,13 +4,13 @@ interface Reservationy{
 }
 
 class Reservation implements Reservationy{
-    getDowBooking(){
-        let i = Math.floor(Math.random() * 7)
-        let arr = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+    getDowBooking():string{
+        let  i:number = Math.floor(Math.random() * 7)
+        let arr:string[] = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
         return arr[i]
     }
 
-    getCodeBooking(){
+    getCodeBooking():string{
         let arr2 = []
         for(let i=65;i<=90;i++){
             arr2.push(String.fromCharCode(i));

@@ -24,6 +24,12 @@ class que implements Queue{
     }
 
     remove(): string{
+        this.peek();
         return this.stack2.pop()
     }
 }
+
+let newque = new que();
+
+newque.add('first');
+console.log(newque.remove());

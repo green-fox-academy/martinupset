@@ -32,7 +32,7 @@ class todo implements Printable{
         this.todo = todo
     }
 
-    printAllFields(){
+    printAllFields() : string{
         return `${this.todo}`
     }
 }

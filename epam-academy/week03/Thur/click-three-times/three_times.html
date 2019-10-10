@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .hidden{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button>button</button>
+    <p class="hidden">5 second elapsed and click 3times</p>
+    <script>
+    const button = document.querySelector('button')
+    let para = document.querySelector('p')
+    let counter = false
+    let after5Sec = false
+
+    this.addEventListener('load', () => {
+        setTimeout(() => {
+            after5Sec = true
+        },5000)
+    })
+
+    button.addEventListener('click', ()=>{
+        counter++
+        if(after5Sec && counter >= 3)
+       { para.classList.remove('hidden')}
+    })
+    </script>
+</body>
+</html>
