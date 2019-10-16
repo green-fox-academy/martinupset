@@ -14,10 +14,13 @@ function App(){
                         <Link to = '/'>Home</Link>
                     </li>
                     <li>
+                        <Link to = '/error'>Error</Link>
+                    </li>
+                    <li>
                         <Link to = '/error/:code'>Error code</Link>
                     </li>
                     <li>
-                        <link to = '/:any'>Not implemented yet</link>
+                        <Link to = '/:any'>Not implemented yet</Link>
                     </li>
                 </ul>
 
