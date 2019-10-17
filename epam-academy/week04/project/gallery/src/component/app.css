@@ -1,0 +1,9 @@
+.imgsize{
+    height: 10vh;
+    width: 10vw;
+}
+
+.btnline{
+    list-style-type: none;
+    text-align: center;
+}
