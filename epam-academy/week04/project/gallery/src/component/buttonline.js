@@ -5,7 +5,8 @@ class App extends React.Component{
     constructor(){
         super()
         this.state = {
-            imgnow: ''
+            buttonimg : ['galleryimg/anni.jpg', 'galleryimg/daomei.jpg', 'galleryimg/eyu.jpg', 'galleryimg/lubu.jpg', 'galleryimg/renma.jpg', 'galleryimg/ruiwen.jpg', 'galleryimg/wukong.jpg', 'galleryimg/xiazi.jpg'],
+            imgnow: 'galleryimg/anni.jpg'
         }
     }
 
@@ -14,9 +15,19 @@ class App extends React.Component{
         console.log(this.state.imgnow)
     }
 
+    arrowchangefn = () =>{
+        let now_index = this.state.buttonimg.indexOf(this.state.imgnow)
+        if (now_index < this.state.buttonimg.length-1 )
+        { now_index ++ }
+        else
+        {now_index = 0}
+        this.setState({imgnow : this.state.buttonimg[now_index]})
+        console.log(this.state.imgnow)
+    }
+
     render(){
         return (<><ButtonLine fn = {this.changefn}/>
-                <Imgspace value = {this.state.imgnow} /></>)
+                <Imgspace value = {this.state.imgnow} arrowfn = {this.arrowchangefn}/></>)
     }
 }
 
@@ -44,7 +55,11 @@ class ButtonLine extends React.Component{
 class Imgspace extends React.Component{
     render(){
         // return (<p>{this.props.value}</p>)
-        return (<div className = 'bigimgsize'><img className = 'bigimgsize' src = {this.props.value} key = {this.props.value} alt = {1}/></div>)
+        return (<div className = 'imgcontainer'>
+            <img src = 'galleryimg/arrow2.png' key = 'arrow2' alt = 'arrow2' className = 'arrowimg' onClick = {this.props.arrowfn}/>
+            <img className = 'bigimgsize' src = {this.props.value} key = {this.props.value} alt = {1}/>
+            <img src = 'galleryimg/arrow.png' key = 'arrow1' alt = 'arrow1' className = 'arrowimg' onClick = {this.props.arrowfn}/>
+            </div>)
         
     }
 }
