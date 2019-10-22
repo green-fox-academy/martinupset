@@ -12,9 +12,9 @@ const Increaser = (props) => {
   )
 }
 
-const mapStateToProps = state =>{
+const mapStateToProps = store =>{
   return{
-    counter: state.counter
+    counter: store.counter
   }
 }
 
