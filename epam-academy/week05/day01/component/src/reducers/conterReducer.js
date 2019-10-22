@@ -6,7 +6,6 @@ const counterReducer = (state = initstate, action) => {
     return {counter : newCounter + 1, tags: []}
   }
 
-  // always create default behaviour, this creates the init state
   return state;
 }
 
