@@ -23,16 +23,16 @@ app.get('/doubling',(req,res)=>{
   }
 })
 
-app.get('/greeter/:greet', (req,res)=>{
-  let {name, title} = req.params.greet
+app.get('/greeter', (req,res)=>{
+  let {name, title} = req.query
 
-  if(name  && title ){
+  if(name !== undefined && title !== undefined){
     res.json({'welcome_message': `Oh, hi there ${name}, my dear ${title}`})
   }
 
-  // else if(title == undefined){
-  //   res.json({'error': 'please provide a title'})
-  // }
+  else if(title == undefined){
+    res.json({'error': 'please provide a title'})
+  }
 
   else{
     res.json({'error': 'please provide a name'})
