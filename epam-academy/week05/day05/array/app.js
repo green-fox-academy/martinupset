@@ -23,17 +23,22 @@ app.post('/arrays', (req,res)=>{
     switch (what){
       case 'sum':
         res.json({result: sum(numbers)})
+        break
       case 'multiply':
         res.json({result: multiply(numbers)})
+        break
       case 'double':
         res.json({result:double(numbers)})
+        break
       default:
         res.json({result:numbers})
+        break
     }
   }
-  res.json({
+  else
+ { res.json({
     error: 'please provide what to do with the numbers'
-  })
+  })}
 })
 
 app.listen(PORT,() => {
