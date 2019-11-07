@@ -5,6 +5,7 @@ const cors = require('cors')
 const db = require('./db')
 const app = express()
 app.use(cors())
+app.use(express.json())
 
 app.get('/api/post', async(req,res) =>{
   const content = await db.getProducts(req.query.category)
@@ -14,11 +15,19 @@ app.get('/api/post', async(req,res) =>{
   })
 })
 
-app.get('/api/categories',async(req,res) =>{
-  const categories = (await db.getCategories()).map(c=>c.category)
-  res.send({
-    categories
-  })
+app.post('/api/post', async(req,res) => {
+  await db.insertfn(req.body)
+  const {username, content} = req.body
+  const data = {
+    username: username,
+    content: content
+  }
+  res.send(data)
+})
+
+app.delete('/api/post/:postId',async(req,res) =>{
+  const data = (await db.delfn(req.params.postId))
+  res.send(data)
 })
 
 app.listen(process.env.PORT, () => {

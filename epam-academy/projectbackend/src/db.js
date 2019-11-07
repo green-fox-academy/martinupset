@@ -14,17 +14,13 @@ connection.connect()
 // var  addSqlParams = ['菜鸟工具', 'https://c.runoob.com','23453', 'CN'];
 // connection.query(addSql,addSqlParams,function (err, result)
 
-function query(sql, params){
+function query(sql, params=undefined){
   return new Promise((resolve,reject) =>{
     connection.query(sql, params, (error,results,fields)=>{
       if (error) return reject(error)
       resolve(results,fields)
     })
   })
-}
-
-function getCategories(){
-  return query('select distinct category from products')
 }
 
 function getProducts(category){
@@ -36,11 +32,20 @@ function getProducts(category){
   return query(sql)
 }
 
-function inserOrder(){
+function insertfn(params){
+  let sql = `insert into info(username, content) values (?, ?)`
+  const {username, content} = params
+  return query(sql,[username,content])
+  
+}
 
+function delfn(params){
+  let sql = `delete from info where index = ?`
+  return query(sql,params)
 }
 
 module.exports = {
-  getCategories,
-  getProducts
+  getProducts,
+  insertfn,
+  delfn
 }

@@ -8,20 +8,21 @@ let commentsList = [
 function commentsReducer(state = commentsList, action){
   switch(action.type){
 
-    case 'GET_POSTS_START':
+    case 'GET_POSTS_START' || 'SUBMIT_POST_START':
     {
       return state
     }
 
     case 'GET_POSTS_SUCCESS':
       return [...action.posts.content]
+
       
     case 'addComment':
       //return state.unshift(actin.data)----->会返回数组的length
 
       // state.unshift(action.data) ---------------|这样写也不行：
       // return state------------------------------|原因是不能直接修改原来的state
-      return [action.data, ...state]
+      return [...state,action.data]
 
 
     case 'delComment':
