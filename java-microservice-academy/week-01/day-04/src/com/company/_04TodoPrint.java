@@ -6,9 +6,9 @@ public class _04TodoPrint {
         StringBuilder builder = new StringBuilder(todoText);
         todoText = builder.insert(0, "My todo:\n").toString();
         StringBuilder builder2 = new StringBuilder(todoText);
-        todoText = builder2.insert(todoText.indexOf("milk   ")+4," - Download games\n").toString();
+        todoText = builder2.insert(todoText.indexOf("milk")+4," - Download games\n").toString();
         StringBuilder builder3 = new StringBuilder(todoText);
-        todoText = builder3.insert(todoText.indexOf("game")+4, " - Diablo").toString();
+        todoText = builder3.insert(todoText.indexOf("games")+4, " - Diablo").toString();
         // Add "My todo:" to the beginning of the todoText
         // Add " - Download games" to the end of the todoText
         // Add " - Diablo" to the end of the todoText but with indention
