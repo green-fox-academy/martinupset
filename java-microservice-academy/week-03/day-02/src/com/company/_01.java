@@ -15,7 +15,10 @@ public class _01 {
         List<Integer> numbersThree = Arrays.asList(3, 9, 2, 8, 6, 5);
         System.out.println(numbersThree.stream().filter((number)->number>20).map(number -> number * number).collect(Collectors.toList()));
 
+        // exercise 4 - average value of the odd numbers
         List<Integer> numbersFour = Arrays.asList(1, 3, -2, -4, -7, -3, -8, 12, 19, 6, 9, 10, 14);
-        System.out.println(numbersFour.stream().filter((number)->number%2 == 1 || number%2 == -1));
+        System.out.println(numbersFour.stream().filter((number)->number%2 == 1 || number%2 == -1)
+                .mapToInt(number -> Integer.parseInt(number.toString())).summaryStatistics().getAverage());
+        //WORKS!
     }
 }
