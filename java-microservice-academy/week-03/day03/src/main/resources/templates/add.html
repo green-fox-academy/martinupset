@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="content">
+    <form style="margin-left: 220px;" class="container" method="post">
+
+        <input type="hidden" th:field="*{id}" required>
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" th:field="*{name}" required>
+        </div>
+        <br>
+        <div>
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" th:field="*{quantity}" required>
+        </div>
+        <br>
+        <div>
+            <label for="price">Price:</label>
+            <input type="number" id="price" th:field="*{price}" required>
+        </div>
+        <br>
+        <div>
+            <label for="available">Available:</label>
+            <input type="checkbox" id="available" th:field="*{available}" >
+        </div>
+    </form>
+</div>
+</body>
+</html>
