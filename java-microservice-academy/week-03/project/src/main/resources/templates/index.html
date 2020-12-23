@@ -1,11 +1,13 @@
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <a href="">Information</a>
 
-<h4>This is Mr.Fox. Currently living on pizza and lemonade. He knows 2tricks</h4>
+<h4 th:text="'This is Mr.Fox.' + ${name}  + ' Currently living on pizza and lemonade. He knows 2tricks'"></h4>
 <img src="./static/greenfox.png" alt="aaa">
 <h1>Known tricks</h1>
 
 <h4>write HTML</h4>
 <h4>code in java</h4>
 <a href="/login">login</a>
+<br>
+<a href="/nutritionStore">nutrition</a>
 </html>
