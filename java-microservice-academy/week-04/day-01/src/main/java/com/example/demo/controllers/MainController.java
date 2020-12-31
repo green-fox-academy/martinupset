@@ -23,16 +23,8 @@ public class MainController {
     @ResponseBody
     public Greet showGreeter(@RequestParam(value = "name") String name,
                              @RequestParam(value = "title") String title) {
-        if (name != null && title != null) {
             String msg = String.format("Oh, hi there %s, my dear %s!", name, title);
             return new Greet(msg);
-        } else if (name == null && title == null) {
-            throw new BadRequest("Please provide a name and a title!");
-        } else if (name != null && title == null) {
-            throw new BadRequest("Please provide a title!");
-        } else {
-            throw new BadRequest("Please provide a name!");
-        }
     }
 
     @GetMapping("/appenda/{appendable}")
