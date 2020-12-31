@@ -14,44 +14,39 @@ public class MainController {
 
     @GetMapping("/doubling")
     @ResponseBody
-    public Doubling showDoubles(@RequestParam(value = "input",required = false) String input) {
+    public Doubling showDoubles(@RequestParam(value = "input", required = false) String input) {
         Doubling result = new Doubling(input);
         return result;
     }
 
     @GetMapping("/greeter")
     @ResponseBody
-    public Greet showGreeter(@RequestParam(value = "name")String name,
-                            @RequestParam(value = "title")String title){
-        if( name != null && title != null){
-            String msg = String.format("Oh, hi there %s, my dear %s!",name,title);
+    public Greet showGreeter(@RequestParam(value = "name") String name,
+                             @RequestParam(value = "title") String title) {
+        if (name != null && title != null) {
+            String msg = String.format("Oh, hi there %s, my dear %s!", name, title);
             return new Greet(msg);
-        }
-        else if(name == null && title == null){
-           throw new BadRequest("Please provide a name and a title!");
-        }
-        else if(name != null && title == null){
+        } else if (name == null && title == null) {
+            throw new BadRequest("Please provide a name and a title!");
+        } else if (name != null && title == null) {
             throw new BadRequest("Please provide a title!");
-        }
-        else {
+        } else {
             throw new BadRequest("Please provide a name!");
         }
     }
 
     @GetMapping("/appenda/{appendable}")
     @ResponseBody
-    public AppendA showAppendA(@PathVariable("appendable") String appendable){
+    public AppendA showAppendA(@PathVariable("appendable") String appendable) {
         return new AppendA(appendable);
     }
 
     @PostMapping("/dountil/{action}")
     @ResponseBody
-    public DoUntil showDoUntil(@PathVariable("action") String action, @RequestBody Until until){
-        if(action.equals("sum")){
+    public DoUntil showDoUntil(@PathVariable("action") String action, @RequestBody Until until) {
+        if (action.equals("sum")) {
             return DoUntil.sumUntil(until.getUntil());
-        }
-
-        else {
+        } else {
             return DoUntil.factorUntil(until.getUntil());
         }
     }

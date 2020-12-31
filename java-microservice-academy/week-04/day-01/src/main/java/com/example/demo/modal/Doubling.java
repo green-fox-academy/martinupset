@@ -17,12 +17,11 @@ public class Doubling {
         return error;
     }
 
-    public Doubling(String received){
-        if(received == null){
+    public Doubling(String received) {
+        if (received == null) {
             this.error = "Please provide an input!";
-        }
-        else{
-            this.result = Integer.parseInt(received)*2;
+        } else {
+            this.result = Integer.parseInt(received) * 2;
             this.received = Integer.parseInt(received);
         }
     }

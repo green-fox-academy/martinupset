@@ -13,7 +13,7 @@ public class DoUntil {
 
     public static DoUntil sumUntil(int value) {
         int sum = 0;
-        for (int i = 0; i <= value; i++){
+        for (int i = 0; i <= value; i++) {
             sum += i;
         }
         return new DoUntil(sum);
@@ -21,7 +21,7 @@ public class DoUntil {
 
     public static DoUntil factorUntil(int value) {
         int sum = 1;
-        for (int i = 1; i <= value; i++){
+        for (int i = 1; i <= value; i++) {
             sum *= i;
         }
         return new DoUntil(sum);
