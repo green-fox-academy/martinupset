@@ -13,10 +13,10 @@
     <th>done</th>
     <th>urgent</th>
     <tr th:each="todos : ${todos}">
-        <td th:text="${todos.id}">aa</td>
-        <td th:text="${todos.title}">bb</td>
-        <td th:text="${todos.urgent}">cc</td>
-        <td th:text="${todos.done}">dd</td>
+        <td th:text="${todos.restaurant_id}">aa</td>
+        <td th:text="${todos.name}">bb</td>
+        <td th:text="${todos.cuisine}">cc</td>
+        <td th:text="${todos.borough}">dd</td>
     </tr>
 </table>
 </body>
