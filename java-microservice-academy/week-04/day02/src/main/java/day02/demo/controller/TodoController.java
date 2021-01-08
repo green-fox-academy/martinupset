@@ -43,7 +43,7 @@ public class TodoController {
 
     @GetMapping("/mongoget")
     public String mongoList(Model model) {
-        model.addAttribute("todos", mongodb.getCollection("restaurants").find().limit(4));
+        model.addAttribute("todos",mongodb.getCollection("restaurants").find().limit(4));
         return "mongoTodo";
     };
 
