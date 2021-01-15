@@ -14,7 +14,6 @@ import org.springframework.http.*;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
@@ -50,8 +49,8 @@ public class APIController {
     public void  sendRequest(){
         int temp = counter.incrementAndGet();
         if (temp < 5){
-            double la = 200;
-            double lo = 300;
+            double la = new Random().nextDouble() * 200;
+            double lo = new Random().nextDouble() * 300;
             final String uri = "http://localhost:8080";
             RestTemplate restTemplate = new RestTemplate();
             HttpHeaders headers = new HttpHeaders();
@@ -70,5 +69,4 @@ public class APIController {
             }
         }
     }
-
 }
